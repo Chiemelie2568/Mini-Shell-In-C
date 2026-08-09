@@ -1,20 +1,20 @@
 
-Status: In development
+# Status: In development
 
-This is a learning project implementing Unix-like shell in C.
+ This is a learning project implementing Unix-like shell in C.
 
-// This is the grammer for the Mini Shell.
+ // This is the grammer for the Mini Shell.
 
-command         → logical ;
+ command         → logical ;
 
-logical         → pipeline
+ logical         → pipeline
                   ( ( "&&" | "||" ) pipeline )* ;
 
-pipeline        → primaryCommand
+ pipeline        → primaryCommand
                   ( "|" primaryCommand )* ;
 
-primaryCommand  → commandPart
+ primaryCommand  → commandPart
                 | "(" command ")" ;
 
-commandPart    -> ( WORD | ( "<" | ">" | "<<" | ">>") WORD )+;
+ commandPart    -> ( WORD | ( "<" | ">" | "<<" | ">>") WORD )+;
 
